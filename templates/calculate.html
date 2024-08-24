@@ -1,25 +1,24 @@
+<!-- templates/calculate.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>avg_marks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculate Average</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-<div class="calculate">
-  <h1>Calculate average marks</h1>
-
-  <!-- Main Input For Receiving Query to our ML -->
-  <form action="{{ url_for('calculate')}}" method="post">
-    <input type="text" name="maths" placeholder="Maths" required="required" />
-    <input type="text" name="science" placeholder="Science" required="required" />
-    <input type="text" name="history" placeholder="history" required="required" />
-
-    <button type="submit" class="btn btn-primary btn-block btn-large">Calculate Button</button>
+<div class="container">
+  <h2>Calculate Your Average Marks</h2>
+  <form action="/calculate" method="post">
+    <label for="maths">Maths:</label>
+    <input type="text" id="maths" name="maths"><br><br>
+    <label for="science">Science:</label>
+    <input type="text" id="science" name="science"><br><br>
+    <label for="history">History:</label>
+    <input type="text" id="history" name="history"><br><br>
+    <input type="submit" value="Calculate">
   </form>
-
-  <br>
-  <br>
 </div>
-
 </body>
 </html>
