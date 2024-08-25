@@ -6,17 +6,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "<h2>Hello, World!</h2>"
-
+    return render_template('index.html')
 
 @app.route('/welcome')
 def welcome():
-    return "Welcome to the Basic Flask App"
-
-
-@app.route('/index')
-def index():
-    return render_template('index.html')
+    return render_template('welcome.html')
 
 
 @app.route('/success/<int:score>')
